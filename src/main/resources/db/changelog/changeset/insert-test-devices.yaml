@@ -1,0 +1,17 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1
+      author: admin
+      changes:
+        - insert:
+            tableName: devices
+            columns:
+              - column:
+                  name: device_id
+                  value: 1
+              - column:
+                  name: device_name
+                  value: "Samsung A50"
+              - column:
+                  name: status
+                  value: "ACTIVE"

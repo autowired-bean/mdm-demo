@@ -1,0 +1,38 @@
+databaseChangeLog:
+  - changeSet:
+      id: 0
+      author: autowiredbean
+      changes:
+        - createTable:
+            schemaName: public
+            tableName: devices
+            columns:
+              - column:
+                  name: id
+                  type: bigserial
+                  constraints:
+                    primaryKey: true
+              - column:
+                  name: device_id
+                  type: bigint
+                  constraints:
+                    unique: true
+                    uniqueConstraintName: uniq_device_name_const
+                    nullable: false
+              - column:
+                  name: device_name
+                  type: varchar(100)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: status
+                  type: varchar(30)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: created_at
+                  type: timestamp with time zone
+                  computed: true
+                  defaultValueComputed: "current_timestamp"
+                  constraints:
+                    nullable: false
