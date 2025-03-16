@@ -1,19 +1,17 @@
-
-
 services:
-#  app:
-#    container_name: app
-#    build: .
-#    ports:
-#      - "8080:8080"
-#    depends_on:
-#      - db
-#    environment:
-#      SPRING_DATASOURCE_URL: jdbc:mysql://db:3306/books_db
-#      SPRING_DATASOURCE_USERNAME: user
-#      SPRING_DATASOURCE_PASSWORD: pass
-#    networks:
-#      - bookstore
+  mdm:
+    container_name: mdm
+    build: .
+    ports:
+      - "8080:8080"
+    depends_on:
+      - db
+    environment:
+      SPRING_DATASOURCE_URL: ${SPRING_DATASOURCE_URL}
+      SPRING_DATASOURCE_USERNAME: ${SPRING_DATASOURCE_USERNAME}
+      SPRING_DATASOURCE_PASSWORD: ${SPRING_DATASOURCE_PASSWORD}
+    networks:
+      - default
 
   db:
     image: postgres:15
@@ -25,8 +23,6 @@ services:
       PGUSER: ${SPRING_DATASOURCE_USERNAME}
     networks:
       - default
-    ports:
-      - "5432:5432"
     volumes:
       - postgres-data:/var/lib/postgresql/data
     healthcheck:
