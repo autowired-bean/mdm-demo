@@ -1,9 +1,11 @@
 package com.example.mdmdemo.service;
 
 import com.example.mdmdemo.exception.DeviceAlreadyExistsException;
-import com.example.mdmdemo.exception.DeviceNotFoundException;
 import com.example.mdmdemo.mapper.DeviceMapper;
-import com.example.mdmdemo.model.*;
+import com.example.mdmdemo.model.Device;
+import com.example.mdmdemo.model.DeviceCreationDTO;
+import com.example.mdmdemo.model.DeviceStatus;
+import com.example.mdmdemo.model.DeviceStatusDTO;
 import com.example.mdmdemo.repository.DeviceRepository;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Service;
