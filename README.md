@@ -22,7 +22,7 @@ cd mdm-demo
 docker compose -f docker-compose.yaml --env-file .env up -d --build
 ```
 
-After that main service will be accessible at: http://localhost:8080/
+After that main service will be accessible at: http://localhost:8080/  
 Swagger UI at: http://localhost:8080/swagger-ui/index
 
 6. Enjoy :D
